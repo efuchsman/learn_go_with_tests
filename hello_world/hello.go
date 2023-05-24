@@ -17,3 +17,23 @@ func HelloWithName(name string) string {
 	}
 	return englishHelloPrefix + name
 }
+
+func HelloWithLanguage(name string, language string) string {
+	if name == "" {
+		name = "World"
+	}
+
+	return greetingPrefix(language) + name
+}
+
+func greetingPrefix(language string) (prefix string) {
+	switch language {
+	case "french", "French":
+		prefix = frenchHelloPrefix
+	case "spanish", "Spanish":
+		prefix = spanishHelloPrefix
+	default:
+		prefix = englishHelloPrefix
+	}
+	return
+}
